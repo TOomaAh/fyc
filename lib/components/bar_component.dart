@@ -7,10 +7,11 @@ import 'ball_component.dart';
 
 class BarComponent extends PositionComponent
     with CollisionCallbacks, KeyboardHandler {
-  BarComponent(
-      {required Vector2 position,
-      required Vector2 size,
-      required Color color}) {
+  BarComponent({
+    required Vector2 position,
+    required Vector2 size,
+    required Color color,
+  }) {
     this.position = position;
     this.size = size;
     _paint = Paint()..color = color;
