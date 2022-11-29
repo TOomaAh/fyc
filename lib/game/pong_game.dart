@@ -5,6 +5,7 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:pong/components/ball_component.dart';
 import 'package:pong/components/bar_component.dart';
+import 'package:pong/utils/movement.dart';
 
 class PongGame extends FlameGame
     with HasCollisionDetection, HasKeyboardHandlerComponents, HasTappables {
@@ -18,6 +19,13 @@ class PongGame extends FlameGame
         position: Vector2(size.x / 2 - 50, size.y * 0.90),
         size: Vector2(100, 10),
         color: Colors.white,
+        movement: PlayerMovement(),
+      ),
+      BarComponent(
+        position: Vector2(size.x / 2 - 50, size.y * 0.10),
+        size: Vector2(100, 10),
+        color: Colors.white,
+        movement: OtherPlayerMovement(),
       ),
       BallComponent(),
     ]);
